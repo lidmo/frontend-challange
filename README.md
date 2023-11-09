@@ -2,7 +2,7 @@
 Desafio Técnico para Desenvolvedores Front-end
 
 **Instruções:**
-- Clone este repositório: `https://github.com/lidmo/frontend-challange.git`.
+- Clone este repositório: `https://github.com/lidmo/frontend-challenge.git`.
 - Crie uma branch com o seu nome completo.
 - Desenvolva as soluções na sua branch.
 - Ao concluir, faça um pull request para a branch principal.
