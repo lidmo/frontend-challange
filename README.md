@@ -21,13 +21,13 @@ Adicione estilos usando SCSS, levando em consideração a responsividade.
 
 Adicione validação aos formulários.  
 
-**Tarefa 4 - Autenticação e Registro**  
+**Tarefa 4 - Autenticação**  
 
-Implemente um sistema básico de autenticação e registro.  
+Implemente um sistema básico de login e registro utilizando os métodos disponíveis na api https://challenge.lidmo.com.br/api/  
 
-**Tarefa 5 - CRUD Básico**  
+**Tarefa 5 - CRUD**  
 
-Implemente um CRUD básico para gerenciar entidades Tarefas. Deve incluir as operações básicas: Create, Read, Update e Delete. Utilize o Pinia para manter o estado da aplicação e integre estas operações com a API.
+Implemente um CRUD básico para gerenciar a entidade Tarefas utilizando os métodos disponíveis na api https://challenge.lidmo.com.br/api/. Utilize o Pinia para manter o estado da aplicação.  
 
 **Tarefa 6 - Componentes Reutilizáveis**  
 
