@@ -6,6 +6,7 @@ Desafio Técnico para Desenvolvedores Front-end
 - Crie uma branch com o seu nome completo.
 - Desenvolva as soluções na sua branch.
 - Ao concluir, faça um pull request para a branch principal.
+- O prazo final para entrega é dia 15/11/2023 23:59:59 
 
 ---
 
