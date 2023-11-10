@@ -24,11 +24,11 @@ Adicione validação aos formulários.
 
 **Tarefa 4 - Autenticação**  
 
-Implemente um sistema básico de login e registro utilizando os métodos disponíveis na api https://challenge.lidmo.com.br/api/  
+Implemente um sistema básico de login e registro. Utilize as rotas disponíveis na api https://challenge.lidmo.com.br/api/.  
 
 **Tarefa 5 - CRUD**  
 
-Implemente um CRUD básico para gerenciar a entidade Tarefas utilizando os métodos disponíveis na api https://challenge.lidmo.com.br/api/. Utilize o Pinia para manter o estado da aplicação.  
+Implemente um CRUD básico para gerenciar a entidade Tarefas. Utilize as rotas disponíveis na api https://challenge.lidmo.com.br/api/.  
 
 **Tarefa 6 - Componentes Reutilizáveis**  
 
