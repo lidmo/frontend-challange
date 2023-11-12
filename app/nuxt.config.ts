@@ -23,6 +23,9 @@ export default defineNuxtConfig({
 
     modules: [
         "@nuxtjs/google-fonts",
+        "nuxt-icons",
+        "nuxt-icon",
+        "nuxt-lodash",
         "@pinia/nuxt"
     ],
 

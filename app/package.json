@@ -14,8 +14,12 @@
     "@nuxtjs/eslint-config-typescript": "^12.1.0",
     "@nuxtjs/google-fonts": "^3.0.2",
     "@pinia/nuxt": "^0.5.1",
+    "@splidejs/vue-splide": "^0.6.12",
     "modern-normalize": "^2.0.0",
     "nuxt": "^3.8.1",
+    "nuxt-icon": "^0.6.5",
+    "nuxt-icons": "^3.2.1",
+    "nuxt-lodash": "^2.5.3",
     "sass": "^1.69.5",
     "vue": "^3.3.8",
     "vue-router": "^4.2.5"
