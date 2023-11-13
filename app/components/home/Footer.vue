@@ -20,7 +20,7 @@
                 </h3>
                 <ul>
                     <li v-for="(value, index) in UsefulLinks" :key="index">
-                        <NuxtLink :href="value.link">
+                        <NuxtLink :href="value.link" class="link">
                             + {{ capitalize(value.name) }}
                         </NuxtLink>
                     </li>
@@ -163,11 +163,6 @@
 
         a {
             color: $color-font-secondary;
-            transition: all .3s ease-in-out;
-
-            &:hover {
-                color: $color-primary;
-            }
         }
     }
 

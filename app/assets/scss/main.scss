@@ -37,11 +37,22 @@ ul, ol {
 a, button {
     cursor: pointer;
     user-select: none;
-    text-decoration: none;
 }
 
 a {
     color: currentColor;
+    text-decoration: none;
+
+    &.link {
+        transition: all .3s ease-in-out;
+        text-underline-offset: $spacing-px;
+
+        &:hover, &.active {
+            color: $color-primary !important;
+            text-decoration: underline;
+            text-underline-offset: $spacing-1;
+        }
+    }
 }
 
 h1,

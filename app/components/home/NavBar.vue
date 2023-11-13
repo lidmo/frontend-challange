@@ -16,7 +16,7 @@
                 </div>
                 <ul class="links scrollbar">
                     <li v-for="(value, index) in links" :key="index">
-                        <NuxtLink :href="value.link" :class="{'active': value.link === linkActive}">
+                        <NuxtLink :href="value.link" class="link" :class="{'active': value.link === linkActive}">
                             {{ capitalize(value.name) }}
                         </NuxtLink>
                     </li>
@@ -233,17 +233,6 @@
         justify-content: center;
         overflow: auto;
         gap: $spacing-6;
-
-        a {
-            transition: all .3s ease-in-out;
-            text-underline-offset: $spacing-px;
-
-            &:hover, &.active {
-                color: $color-primary;
-                text-decoration: underline;
-                text-underline-offset: $spacing-1;
-            }
-        }
 
         @include screen-md {
             flex-grow: 0;
