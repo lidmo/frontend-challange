@@ -22,13 +22,6 @@
     </section>
 </template>
 
-<style lang="scss">
-    .subtitle {
-        color: $color-font-invert !important;
-        font-size: 12px;
-    }
-</style>
-
 <style scoped lang="scss">
     $space-top: 5rem;
 
@@ -41,6 +34,11 @@
         justify-content: center;
         padding: $spacing-20 0;
         padding-top: calc($space-top + $spacing-20);
+    }
+
+    :deep(.subtitle) {
+        color: $color-font-invert !important;
+        font-size: 12px;
     }
 
     p {

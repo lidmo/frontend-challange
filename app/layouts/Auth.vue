@@ -18,52 +18,6 @@
     };
 </script>
 
-<style lang="scss">
-    h1 {
-        line-height: 1.2;
-        font-size: calc(2rem + 2vw);
-        font-weight: 700;
-        margin-bottom: $spacing-4;
-
-        span {
-            color: $color-primary;
-        }
-    }
-
-    p {
-        margin-bottom: $spacing-4;
-    }
-
-    form {
-        display: flex;
-        flex-direction: column;
-        gap: $spacing-4;
-    }
-
-    .buttons {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        gap: $spacing-4;
-
-        @include screen-lg {
-            flex-direction: row;
-        }
-
-        div {
-            display: flex;
-            flex-direction: column;
-            gap: $spacing-4;
-            color: rgb(56, 119, 255);
-
-            @include screen-lg {
-                gap: $spacing-2;
-                text-align: end;
-            }
-        }
-    }
-</style>
-
 <style scoped lang="scss">
     main {
         background: $color-background-secondary;
@@ -128,6 +82,50 @@
             max-width: $screen-xs;
             padding: $spacing-12;
             margin: auto 0;
+        }
+
+        :deep(h1) {
+            line-height: 1.2;
+            font-size: calc(2rem + 2vw);
+            font-weight: 700;
+            margin-bottom: $spacing-4;
+
+            span {
+                color: $color-primary;
+            }
+        }
+
+        :deep(p) {
+            margin-bottom: $spacing-4;
+        }
+
+        :deep(form) {
+            display: flex;
+            flex-direction: column;
+            gap: $spacing-4;
+        }
+
+        :deep(.buttons) {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            gap: $spacing-4;
+
+            @include screen-lg {
+                flex-direction: row;
+            }
+
+            div {
+                display: flex;
+                flex-direction: column;
+                gap: $spacing-4;
+                color: rgb(56, 119, 255);
+
+                @include screen-lg {
+                    gap: $spacing-2;
+                    text-align: end;
+                }
+            }
         }
     }
 

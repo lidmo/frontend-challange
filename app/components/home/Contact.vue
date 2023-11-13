@@ -5,7 +5,7 @@
                 <Titration
                     subtitle="entre em contato agora"
                     title="Lorem ipsum dolor sit amet consectetur."
-                    classSubtitle="subtitle2"
+                    classSubtitle="subtitle"
                 />
                 <p>
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos ex consectetur, blanditiis nihil labore laboriosam eum, magni ducimus deleniti et explicabo harum obcaecati eius, voluptate eaque quo iusto sequi placeat?
@@ -29,13 +29,6 @@
         </div>
     </section>
 </template>
-
-<style lang="scss">
-    .subtitle2 {
-        color: $color-primary !important;
-        font-weight: 500;
-    }
-</style>
 
 <style scoped lang="scss">
     .detail {
@@ -104,6 +97,11 @@
             margin-bottom: $spacing-12;
             font-size: 0.875rem;
             opacity: 0.7;
+        }
+
+        :deep(.subtitle) {
+            color: $color-primary !important;
+            font-weight: 500;
         }
     }
 
