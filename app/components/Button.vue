@@ -33,6 +33,7 @@
 <style scoped lang="scss">
     button, a {
         display: inline-flex;
+        gap: $spacing-2;
         justify-content: center;
         text-align: center;
         border: none;
