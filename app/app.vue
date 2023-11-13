@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <NuxtLayout>
         <Head>
             <Link rel="icon" href="/favicon/favicon.ico" sizes="any" />
             <Link rel="icon" href="/favicon/1.icon.png" type="image/png" sizes="16x16" />
@@ -12,5 +12,5 @@
 
         <NuxtLoadingIndicator color="#EEA823" :height="5" />
         <NuxtPage />
-    </div>
+    </NuxtLayout>
 </template>
