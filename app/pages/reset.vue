@@ -6,12 +6,19 @@
         <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad cupiditate
         </p>
-        <form>
-            <input placeholder="seu melhor email">
-            <Button type="submit">
-                Recuperar agora
-            </Button>
-        </form>
+        <ClientOnly>
+            <template #fallback>
+                <FallbackForm />
+            </template>
+
+            <Vueform :endpoint="false" :loading="loading" @submit="submit">
+                <TextElement name="email" placeholder="seu melhor email" rules="required|email" />
+
+                <Button type="submit" withFull :loading="loading">
+                    Recuperar agora
+                </Button>
+            </Vueform>
+        </ClientOnly>
     </section>
 </template>
 
@@ -23,4 +30,11 @@
     useSeoMeta({
         title: "Recuperar senha"
     });
+
+    const loading = ref(false);
+
+    const submit = ({ data }: { data: Record<string, any> }) => {
+        loading.value = true;
+        console.log(data);
+    };
 </script>

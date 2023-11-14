@@ -14,21 +14,38 @@
                     whatsapp
                 </Button>
             </article>
-            <article>
-                <form>
-                    <h1>
-                        Email contact
-                    </h1>
-                    <input placeholder="seu melhor nome">
-                    <input placeholder="seu melhor email">
-                    <Button type="submit">
-                        Enviar agora
-                    </Button>
-                </form>
+            <article class="form">
+                <h1>
+                    Email contact
+                </h1>
+
+                <ClientOnly>
+                    <template #fallback>
+                        <FallbackForm />
+                    </template>
+
+                    <Vueform :endpoint="false" :loading="loading" @submit="submit">
+                        <TextElement name="nome" placeholder="seu melhor nome" rules="required" />
+                        <TextElement name="email" placeholder="seu melhor email" rules="required|email" />
+
+                        <Button type="submit" :loading="loading">
+                            Enviar agora
+                        </Button>
+                    </Vueform>
+                </ClientOnly>
             </article>
         </div>
     </section>
 </template>
+
+<script setup lang="ts">
+    const loading = ref(false);
+
+    const submit = ({ data }: { data: Record<string, any> }) => {
+        loading.value = true;
+        console.log(data);
+    };
+</script>
 
 <style scoped lang="scss">
     .detail {
@@ -105,13 +122,13 @@
         }
     }
 
-    form {
-        height: 100%;
+    .form {
+        width: 100%;
         display: flex;
         flex-direction: column;
         justify-content: center;
-        gap: $spacing-6;
-        padding: $spacing-8;
+        gap: $spacing-4;
+        padding: $spacing-4;
         border-radius: $spacing-3;
         background: $color-background-primary;
         color: $color-font-primary;
@@ -125,10 +142,12 @@
         button {
             margin: 0 auto;
             width: 100%;
+            grid-column: span 12/span 12;
         }
 
         @include screen-xs {
             max-width: $screen-xs;
+            padding: $spacing-8;
             margin: 0 auto;
 
             button {

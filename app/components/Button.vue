@@ -1,15 +1,24 @@
 <template>
     <component
         :is="props.href ? NuxtLink : 'button'"
+        ref="button"
         :href="props.href"
         :class="[
             props.color,
             `rounded-${props.rounded}`,
             `size-${props.size}`,
-            {'activated': props.activated}
+            {'withFull': props.withFull},
+            {'activated': props.activated},
+            {'loading': props.loading}
         ]"
+        :disabled="props.loading"
     >
-        <slot />
+        <Transition name="btn" mode="out-in">
+            <Icon v-if="props.loading" name="eos-icons:loading" class="loader" />
+            <span v-else>
+                <slot />
+            </span>
+        </Transition>
     </component>
 </template>
 
@@ -22,11 +31,29 @@
         rounded?: "full" | "none" | "normal"
         size?: "sm" | "md" | "lg"
         activated?: boolean
+        loading?: boolean
+        withFull?: boolean
     }>(), {
         href: undefined,
         color: "primary",
         rounded: "normal",
         size: "lg"
+    });
+
+    const button = ref<HTMLButtonElement>();
+
+    // para evitar o redimensionamento do botão em modo loading
+    watch(() => props.loading, async (newValue) => {
+        if (button.value && !props.withFull) {
+            const add = newValue ? `${button.value?.offsetWidth}px` : "";
+
+            if (!add) {
+                // um pequeno delay para o botão não tirar o width original antes da transição
+                await new Promise(resolve => setTimeout(resolve, 600));
+            }
+
+            button.value.style.width = add;
+        }
     });
 </script>
 
@@ -44,6 +71,17 @@
         border-color: transparent;
         font-weight: 500;
         transition: all .3s ease-in-out;
+
+        &.withFull {
+            width: 100%;
+        }
+
+        span {
+            display: inline-flex;
+            gap: $spacing-2;
+            justify-content: center;
+            text-align: center;
+        }
 
         &.rounded-normal {
             border-radius: .5rem;
@@ -80,11 +118,31 @@
         &:disabled {
             opacity: .3;
             cursor: not-allowed;
+            pointer-events: none;
         }
 
         &.activated {
             cursor: not-allowed;
         }
+    }
+
+    .btn-enter-active,
+    .btn-leave-active {
+        transition: all .5s ease-in-out
+    }
+
+    .btn-enter-from {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+
+    .btn-leave-to {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+
+    .loader {
+        scale: 2;
     }
 
     .transparent {

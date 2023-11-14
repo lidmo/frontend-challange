@@ -25,6 +25,8 @@
     "vue-router": "^4.2.5"
   },
   "dependencies": {
+    "@vueform/nuxt": "^1.4.0",
+    "@vueform/vueform": "^1.5.7",
     "pinia": "^2.1.7"
   }
 }

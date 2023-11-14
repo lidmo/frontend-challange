@@ -105,7 +105,13 @@
             gap: $spacing-4;
         }
 
+        :deep(.buttons),
+        :deep(button) {
+            grid-column: span 12/span 12;
+        }
+
         :deep(.buttons) {
+            grid-column: span 12/span 12;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
@@ -116,12 +122,14 @@
             }
 
             div {
+                width: 100%;
                 display: flex;
                 flex-direction: column;
                 gap: $spacing-4;
                 color: rgb(56, 119, 255);
 
                 @include screen-lg {
+                    white-space: nowrap;
                     gap: $spacing-2;
                     text-align: end;
                 }

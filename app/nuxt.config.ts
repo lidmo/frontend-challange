@@ -1,3 +1,5 @@
+import vueform from "@vueform/vueform/vite";
+
 export default defineNuxtConfig({
     app: {
         pageTransition: {
@@ -12,7 +14,8 @@ export default defineNuxtConfig({
     },
 
     css: [
-        "~/assets/scss/main.scss"
+        "~/assets/scss/main.scss",
+        "~/assets/scss/vueform.scss"
     ],
 
     vite: {
@@ -26,7 +29,11 @@ export default defineNuxtConfig({
                     ].join("\n")
                 }
             }
-        }
+        },
+
+        plugins: [
+            vueform()
+        ]
     },
 
     devtools: {
@@ -38,6 +45,7 @@ export default defineNuxtConfig({
         "nuxt-icons",
         "nuxt-icon",
         "nuxt-lodash",
+        "@vueform/nuxt",
         "@pinia/nuxt"
     ],
 
