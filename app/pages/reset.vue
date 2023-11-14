@@ -36,5 +36,9 @@
     const submit = ({ data }: { data: Record<string, any> }) => {
         loading.value = true;
         console.log(data);
+
+        setTimeout(() => {
+            loading.value = false;
+        }, 3000);
     };
 </script>

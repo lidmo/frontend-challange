@@ -11,9 +11,35 @@
                 <FallbackForm />
             </template>
 
-            <Vueform :endpoint="false" :loading="loading" @submit="submit">
-                <TextElement name="nome" placeholder="seu melhor nome" rules="required" />
-                <TextElement name="email" placeholder="seu melhor email" rules="required|email" />
+            <Vueform :endpoint="false" :disabled="loading" :loading="loading" @submit="submit">
+                <Error :description="error" />
+
+                <TextElement
+                    name="name"
+                    placeholder="seu melhor nome"
+                    rules="required"
+                />
+                <TextElement
+                    name="email"
+                    input-type="email"
+                    autocomplete="email"
+                    placeholder="seu melhor email"
+                    rules="required|email"
+                />
+                <TextElement
+                    input-type="password"
+                    autocomplete="new-password"
+                    name="password"
+                    placeholder="sua melhor senha"
+                    rules="required|confirmed|min:6"
+                />
+                <TextElement
+                    input-type="password"
+                    autocomplete="new-password"
+                    name="password_confirmation"
+                    placeholder="confirme sua senha"
+                    rules="required"
+                />
 
                 <div class="buttons">
                     <Button type="submit" withFull :loading="loading">
@@ -40,9 +66,32 @@
     });
 
     const loading = ref(false);
+    const error = ref("");
 
-    const submit = ({ data }: { data: Record<string, any> }) => {
+    const submit = async ({ data }: { data: Record<string, any> }) => {
+        error.value = "";
         loading.value = true;
-        console.log(data);
+
+        interface ResponseRegister {
+            message: string
+        }
+
+        await $fetch<ResponseRegister>("/register", {
+            baseURL: useRuntimeConfig().public.challengeApi,
+            method: "POST",
+
+            body: {
+                ...data
+            },
+
+            async onResponse ({ response }) {
+                if (response.status === 201) {
+                    await useLoginUser(data);
+                }
+
+                error.value = response._data?.message;
+                loading.value = false;
+            }
+        });
     };
 </script>

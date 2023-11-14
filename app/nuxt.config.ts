@@ -36,6 +36,12 @@ export default defineNuxtConfig({
         ]
     },
 
+    runtimeConfig: {
+        public: {
+            challengeApi: "https://challenge.lidmo.com.br/api"
+        }
+    },
+
     devtools: {
         enabled: true
     },
