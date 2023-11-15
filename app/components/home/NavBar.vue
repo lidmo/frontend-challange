@@ -35,12 +35,7 @@
     const toggle = (action?: boolean) => {
         open.value = action ?? !open.value;
 
-        if (open.value) {
-            document.body.style.overflow = "hidden";
-        }
-        else {
-            document.body.style.overflow = "";
-        }
+        useBodyOverflow(open.value);
     };
 
     const links = [
