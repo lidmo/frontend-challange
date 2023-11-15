@@ -7,7 +7,6 @@ export default function () {
     }
 
     return useCookie<User>("user", {
-        maxAge: 7 * 24 * 60 * 60,
-        secure: true
+        maxAge: 7 * 24 * 60 * 60
     });
 }
