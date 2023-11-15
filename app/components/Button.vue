@@ -26,7 +26,7 @@
     import { NuxtLink } from "#components";
 
     const props = withDefaults(defineProps<{
-        color?: "transparent" | "primary" | "secondary" | "white"
+        color?: "transparent" | "primary" | "secondary" | "white" | "danger"
         href?: string
         rounded?: "full" | "none" | "normal"
         size?: "sm" | "md" | "lg"
@@ -189,6 +189,18 @@
             background-color: $color-secondary;
             color: $color-font-invert;
             border-color: $color-font-invert;
+        }
+    }
+
+    .danger {
+        background-color: $color-danger;
+        color: $color-font-invert;
+
+        &:hover,
+        &.activated {
+            background-color: $color-font-invert;
+            color: $color-danger;
+            border-color: $color-danger;
         }
     }
 </style>

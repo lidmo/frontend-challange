@@ -14,16 +14,14 @@
 </script>
 
 <style scoped lang="scss">
-    $color: #ff0000;
-
     div {
         width: 100%;
         grid-column: span 12/span 12;
-        color: $color;
-        background: rgba($color, 0.3);
+        color: $color-danger;
+        background: rgba($color-danger, 0.3);
         padding: $spacing-4;
         border-radius: $spacing-2;
-        border: 1px solid $color;
+        border: 1px solid $color-danger;
     }
 
     .error-enter-active,
