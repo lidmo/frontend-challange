@@ -45,7 +45,7 @@
     // para evitar o redimensionamento do botão em modo loading
     watch(() => props.loading, async (newValue) => {
         if (button.value && !props.withFull) {
-            const add = newValue ? `${button.value?.offsetWidth}px` : "";
+            const add = newValue ? `${button.value?.getBoundingClientRect().width}px` : "";
 
             if (!add) {
                 // um pequeno delay para o botão não tirar o width original antes da transição
@@ -124,11 +124,15 @@
         &.activated {
             cursor: not-allowed;
         }
+
+        &.loading {
+            overflow: hidden;
+        }
     }
 
     .btn-enter-active,
     .btn-leave-active {
-        transition: all .5s ease-in-out
+        transition: all .5s ease-in-out;
     }
 
     .btn-enter-from {
