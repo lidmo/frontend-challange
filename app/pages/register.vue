@@ -76,8 +76,9 @@
             message: string
         }
 
-        await $fetch<ResponseRegister>("/register", {
-            baseURL: useRuntimeConfig().public.challengeApi,
+        const apiFetch = useChallengeApi(false);
+
+        await apiFetch<ResponseRegister>("/register", {
             method: "POST",
 
             body: {

@@ -6,15 +6,17 @@ export default async function ({ email, password }: Record<string, string>) {
         token: string
     }
 
-    const login = await $fetch<ResponseLogin>("/login", {
-        ignoreResponseError: true,
-        baseURL: useRuntimeConfig().public.challengeApi,
+    const apiFetch = useChallengeApi(false);
+
+    const login = await apiFetch<ResponseLogin>("/login", {
         method: "POST",
 
         body: {
             email,
             password
-        }
+        },
+
+        ignoreResponseError: true
     });
 
     if (!login?.token) {
@@ -29,8 +31,7 @@ export default async function ({ email, password }: Record<string, string>) {
         }
     }
 
-    const user = await $fetch<ResponseUser>("/user", {
-        baseURL: useRuntimeConfig().public.challengeApi,
+    const user = await apiFetch<ResponseUser>("/user", {
         method: "GET",
 
         headers: {
