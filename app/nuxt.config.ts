@@ -1,5 +1,3 @@
-import vueform from "@vueform/vueform/vite";
-
 export default defineNuxtConfig({
     app: {
         pageTransition: {
@@ -29,11 +27,7 @@ export default defineNuxtConfig({
                     ].join("\n")
                 }
             }
-        },
-
-        plugins: [
-            vueform()
-        ]
+        }
     },
 
     runtimeConfig: {
