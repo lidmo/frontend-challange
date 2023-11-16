@@ -1,0 +1,28 @@
+@use "@vueform/vueform/themes/vueform/scss/index.scss";
+
+*,
+:before,
+:after,
+:root {
+    --vf-primary: #{$color-primary};
+    --vf-primary-darker: $color-primary;
+    --vf-danger: #{$color-danger};
+
+    --vf-ring-color: #{$color-primary};
+
+    --vf-bg-input: #E5E7EA;
+
+    --vf-color-input: #{$color-secondary};
+    --vf-color-placeholder: #8B8B8B;
+
+    --vf-radius-input: 0.5rem;
+
+    --vf-border-color-input: transparent;
+    --vf-border-color-input-danger: var(--vf-danger);
+
+    --vf-min-height-input-lg: 3.5rem;
+}
+
+.vf-input-field {
+    width: 100%;
+}
