@@ -1,0 +1,81 @@
+@import '../../assets/scss/main.scss';
+.task-edit-form {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 999999;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: $white-primary-color;
+
+  .modal-content {
+    background: $blue-color;
+    padding: 60px;
+    border-radius: 8px;
+    text-align: center;
+
+    .header-modal {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      img {
+        padding: 5px;
+        border-radius: 50%;
+        background: $yellow-color;
+      }
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+
+      label {
+        margin-bottom: 5px;
+      }
+
+      input {
+        background-color: #010b1d;
+        border-radius: 5px;
+        padding: 5px 15px;
+        border: none;
+        margin: 10px;
+        color: $white-primary-color;
+      }
+
+      input::placeholder {
+        color: $white-primary-color;
+      }
+    }
+
+    .button-container {
+      display: flex;
+      justify-content: space-around;
+      margin-top: 20px;
+
+      button {
+        color: $white-primary-color;
+        font-weight: 700;
+        width: 200px;
+        margin: 0 5px;
+        font-size: 14px;
+        cursor: pointer;
+        border: none;
+        border-radius: 5px;
+        transition: background-color 0.3s;
+
+        &:hover {
+          background-color: red;
+        }
+      }
+
+      .cancel-btn {
+        background-color: red;
+      }
+    }
+  }
+}
